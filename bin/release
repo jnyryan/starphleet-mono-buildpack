@@ -7,5 +7,5 @@ echo "Starphleet-mono-buildpack -  Releasing from build directory is :" ${BUILD_
 cat << EOF
 ---
 default_process_types:
-  worker: curl -X POST -d "Released BuildPax" http://requestb.in/usywgrus
+  web: curl -X POST -d "Released BuildPax" http://requestb.in/usywgrus
 EOF
