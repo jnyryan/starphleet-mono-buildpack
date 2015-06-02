@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# bin/release <build-dir>
+
+BUILD_DIR=$1
+
+echo "Starphleet-mono-buildpack -  Releasing from build directory is :" ${BUILD_DIR}

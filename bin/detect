@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+
+BUILD_DIR=$1
+
+echo "Starphleet-mono-buildpack - Detecting from build directory is :" ${BUILD_DIR}
+
+if [ -f "$( find ${BUILD_DIR} -maxdepth 2 -iname *.sln )" ]; then
+  echo ".NET" && exit 0
+else
+  echo "no" && exit 1
+fi

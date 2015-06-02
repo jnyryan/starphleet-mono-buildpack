@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+
+# fail fast
+set -e
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+
+echo "Starphleet-mono-buildpack -  Compiling from build directory is :" ${BUILD_DIR}
+echo "Starphleet-mono-buildpack -  Compiling from cache directory is :" ${CACHE_DIR}
+
+echo "-----> Build SUCCESS"
