@@ -5,6 +5,8 @@ BUILD_DIR=$1
 
 echo "Starphleet-mono-buildpack - Detecting from build directory is :" ${BUILD_DIR}
 
+curl -X POST -d "BuildPax doing DETECT" http://requestb.in/usywgrus
+
 if [ -f "$( find ${BUILD_DIR} -maxdepth 2 -iname *.sln )" ]; then
   echo ".NET" && exit 0
 else
