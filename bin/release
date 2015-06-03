@@ -2,10 +2,10 @@
 # bin/release <build-dir>
 set -e
 
-echo "Starphleet-mono-buildpack -  Releasing from build directory is :" ${BUILD_DIR}
+logger "Starphleet-mono-buildpack -  Releasing from build directory is :" ${BUILD_DIR}
 
 cat << EOF
 ---
 default_process_types:
-  web: echo "I am released"
+  web: logger "I am released"
 EOF
