@@ -7,5 +7,5 @@ echo "Starphleet-mono-buildpack -  Running RELEASE. build directory is :" ${BUIL
 cat << EOF
 ---
 default_process_types:
-  web: bash start.sh
+  web: echo "RELEASED"
 EOF
