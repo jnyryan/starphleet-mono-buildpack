@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
-set -e
+#set -e
+
+echo "IN RELEASE"
 
 echo "Starphleet-mono-buildpack -  Running RELEASE. build directory is :" ${BUILD_DIR}
 
-cat << EOF
----
-default_process_types:
-  web: echo "RELEASED"
-EOF
+#cat << EOF
+#---
+#default_process_types:
+#  web: echo "RELEASED"
+#EOF
