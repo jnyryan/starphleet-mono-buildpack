@@ -8,5 +8,5 @@ cd ${BUILD_DIR}
 cat << EOF
 ---
 default_process_types:
-  web: echo "IN RELEASE catchup" && cd ${BUILD_DIR} && pwd && bash start.sh
+  web: echo "IN RELEASE catchup" && cd ${BUILD_DIR} && ls -la && pwd && bash start.sh
 EOF
