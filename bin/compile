@@ -7,16 +7,18 @@ set -e
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-logger "Starphleet-mono-buildpack -  Compiling. BUILD_DIR:" ${BUILD_DIR} "CACHE_DIR:" ${CACHE_DIR} "OUTPUT_DIR:" ${OUTPUT_DIR}
+echo "Starphleet-mono-buildpack -  Compiling. BUILD_DIR:" ${BUILD_DIR} "CACHE_DIR:" ${CACHE_DIR} "OUTPUT_DIR:" ${OUTPUT_DIR}
 
-logger "-----> Begin Mono install"
+echo "-----> Begin Mono install"
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
 apt-get update
 apt-get -y -qq install mono-devel
-logger "-----> Mono install SUCCESS"
 
-logger "-----> Starting Compilation"
+echo "-----> Mono install SUCCESS"
+
+echo "-----> Starting Compilation"
+
 # find a solution file
 SLN=$(find . -maxdepth 2 -iname "*.sln")
 if [ $( echo "${SLN}" | wc -l ) -gt 1 ]; then
@@ -27,4 +29,5 @@ fi
 BUILD_CACHE_LOCATION=${CACHE_DIR}/build_cache/
 mkdir -p ${BUILD_CACHE_LOCATION}
 xbuild /property:Configuration=Release /property:OutDir=${BUILD_CACHE_LOCATION} ${SLN}
-logger "-----> Build SUCCESS"
+
+echo "-----> Build SUCCESS"

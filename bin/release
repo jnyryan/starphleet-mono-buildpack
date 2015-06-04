@@ -2,7 +2,7 @@
 # bin/release <build-dir>
 set -e
 
-logger "Starphleet-mono-buildpack -  Releasing from build directory is :" ${BUILD_DIR}
+echo "Starphleet-mono-buildpack -  Releasing from build directory is :" ${BUILD_DIR}
 
 cat << EOF
 ---

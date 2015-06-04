@@ -3,7 +3,7 @@
 
 BUILD_DIR=$1
 
-logger "Starphleet-mono-buildpack - Detecting from build directory is :" ${BUILD_DIR}
+echo "Starphleet-mono-buildpack - Detecting from build directory is :" ${BUILD_DIR}
 
 if [ -f "$( find ${BUILD_DIR} -maxdepth 2 -iname *.sln )" ]; then
   echo ".NET" && exit 0
