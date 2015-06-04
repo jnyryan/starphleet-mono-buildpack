@@ -27,8 +27,9 @@ ls -al /var/git/monoapp
 echo "-----> Starting Compilation"
 
 cd ${BUILD_DIR}
+pwd
 # find a solution file
-SLN=$(find ${BUILD_DIR} -maxdepth 2 -iname "*.sln")
+SLN=$(find . -maxdepth 2 -iname "*.sln")
 if [ $( echo "${SLN}" | wc -l ) -gt 1 ]; then
   echo "-----> Too many *.sln files"
   exit 1
