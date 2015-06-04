@@ -4,7 +4,7 @@
 
 echo "IN RELEASE"
 
-echo "Starphleet-mono-buildpack -  Running RELEASE. build directory is :" ${BUILD_DIR}
+#echo "Starphleet-mono-buildpack -  Running RELEASE. build directory is :" ${BUILD_DIR}
 
 #cat << EOF
 #---
