@@ -5,5 +5,5 @@ set -e
 cat << EOF
 ---
 default_process_types:
-  web: echo "IN RELEASE catchup 3" && cd ${BUILD_DIR} && ls -la && pwd && bash start.sh
+  web: echo "IN RELEASE catchup 5" && bash start.sh
 EOF
