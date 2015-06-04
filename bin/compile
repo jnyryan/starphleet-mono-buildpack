@@ -16,12 +16,17 @@ sudo echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo 
 sudo apt-get update
 sudo apt-get -y -qq install mono-devel
 
-echo "-----> Mono install SUCCESS"
+echo "-----> Mono installed"
+
+echo "Starphleet-mono-buildpack - Running COMPILE"
+echo "build directory: " ${BUILD_DIR} "CACHE_DIR:" ${CACHE_DIR} "OUTPUT_DIR:" ${OUTPUT_DIR}
+
+ll ${BUILD_DIR}
 
 echo "-----> Starting Compilation"
 
 # find a solution file
-SLN=$(find . -maxdepth 2 -iname "*.sln")
+SLN=$(find ${BUILD_DIR} -maxdepth 2 -iname "*.sln")
 if [ $( echo "${SLN}" | wc -l ) -gt 1 ]; then
   echo "-----> Too many *.sln files"
   exit 1
