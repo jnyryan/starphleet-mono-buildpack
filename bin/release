@@ -7,5 +7,5 @@ logger "Starphleet-mono-buildpack -  Releasing from build directory is :" ${BUIL
 cat << EOF
 ---
 default_process_types:
-  web: logger "I am released"
+  web: bash start.sh
 EOF
