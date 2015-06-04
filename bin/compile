@@ -23,22 +23,26 @@ echo "build directory: " ${BUILD_DIR} "CACHE_DIR:" ${CACHE_DIR} "OUTPUT_DIR:" ${
 
 ls -al  ${BUILD_DIR}
 ls -al /var/git/monoapp
+cd ${BUILD_DIR}
+pwd
+ls -la
 
 echo "-----> Starting Compilation"
 
-cd ${BUILD_DIR}
-pwd
+
 # find a solution file
 SLN=$(find . -maxdepth 2 -iname "*.sln")
 if [ $( echo "${SLN}" | wc -l ) -gt 1 ]; then
   echo "-----> Too many *.sln files"
   exit 1
 fi
-cd -
+
 echo ${SLN}
 
 BUILD_CACHE_LOCATION=${CACHE_DIR}/build_cache/
 mkdir -p ${BUILD_CACHE_LOCATION}
 xbuild /property:Configuration=Release /property:OutDir=${BUILD_CACHE_LOCATION} ${SLN}
+
+cd -
 
 echo "-----> Build SUCCESS"
