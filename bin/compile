@@ -26,13 +26,14 @@ ls -al /var/git/monoapp
 
 echo "-----> Starting Compilation"
 
+cd ${BUILD_DIR}
 # find a solution file
 SLN=$(find ${BUILD_DIR} -maxdepth 2 -iname "*.sln")
 if [ $( echo "${SLN}" | wc -l ) -gt 1 ]; then
   echo "-----> Too many *.sln files"
   exit 1
 fi
-
+cd -
 echo ${SLN}
 
 BUILD_CACHE_LOCATION=${CACHE_DIR}/build_cache/
