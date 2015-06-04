@@ -21,7 +21,7 @@ echo "-----> Mono installed"
 echo "Starphleet-mono-buildpack - Running COMPILE"
 echo "build directory: " ${BUILD_DIR} "CACHE_DIR:" ${CACHE_DIR} "OUTPUT_DIR:" ${OUTPUT_DIR}
 
-ll ${BUILD_DIR}
+ls -al  ${BUILD_DIR}
 
 echo "-----> Starting Compilation"
 
