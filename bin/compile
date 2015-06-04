@@ -33,5 +33,13 @@ mkdir -p ${BUILD_CACHE_LOCATION}
 xbuild /property:Configuration=Release /property:OutDir=${BUILD_CACHE_LOCATION} ${SLN}
 
 cd -
+echo "vars and stuf"
+echo "build directory: " ${BUILD_DIR}
+pwd
+ls -la ${BUILD_DIR}
+cd ${BUILD_DIR}
+pwd
+ls -la .
+cd -
 
 echo "-----> Build SUCCESS"

@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
 set -e
-BUILD_DIR=$1
-
-cd ${BUILD_DIR}
 
 cat << EOF
 ---
 default_process_types:
-  web: echo "IN RELEASE catchup" && cd ${BUILD_DIR} && ls -la && pwd && bash start.sh
+  web: echo "IN RELEASE catchup 3" && cd ${BUILD_DIR} && ls -la && pwd && bash start.sh
 EOF
