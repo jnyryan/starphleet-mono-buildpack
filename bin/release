@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
-#set -e
-#echo "Starphleet-mono-buildpack -  Running RELEASE. build directory is :" ${BUILD_DIR}
+set -e
+BUILD_DIR=$1
+
+cd ${BUILD_DIR}
+
 cat << EOF
 ---
 default_process_types:
-  web: echo "RELEASE"
+  web: bash start.sh
 EOF
