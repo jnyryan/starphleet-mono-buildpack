@@ -29,7 +29,6 @@ ls -la
 
 echo "-----> Starting Compilation"
 
-
 # find a solution file
 SLN=$(find . -maxdepth 2 -iname "*.sln")
 if [ $( echo "${SLN}" | wc -l ) -gt 1 ]; then
