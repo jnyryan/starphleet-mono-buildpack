@@ -29,7 +29,7 @@ if [ $( echo "${SLN}" | wc -l ) -gt 1 ]; then
 fi
 
 #BUILD_CACHE_LOCATION=${CACHE_DIR}/build_cache/
-BUILD_CACHE_LOCATION=${BUILD_DIR}/build/
+BUILD_CACHE_LOCATION=${BUILD_DIR}/build_cache/
 mkdir -p ${BUILD_CACHE_LOCATION}
 xbuild /property:Configuration=Release /property:OutDir=${BUILD_CACHE_LOCATION} ${SLN}
 
