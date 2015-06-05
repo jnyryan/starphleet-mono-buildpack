@@ -4,6 +4,7 @@
 set -e
 
 BUILD_DIR=$1
+LINKED_DIR=`readlink $1`
 
 echo "Starphleet-mono-buildpack - Running DETECT. build directory: " ${BUILD_DIR}
 
