@@ -1,14 +1,20 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
-#set -e
+set -e
 
 BUILD_DIR=$1
-LINKED_DIR=`readlink $1`
 
-echo "Starphleet-mono-buildpack - Running DETECT. build symlinked directory: " ${LINKED_DIR}
+# handle symlinks as the build-dir
+if [[ -L "$1" && -d "$1" ]]
+then
+    echo "$1 is a symlink to a directory"
+    BUILD_DIR=`readlink $1`
+fi
 
-if [ -f "$( find "${LINKED_DIR}" -maxdepth 2 -iname *.sln )" ]; then
+echo "Starphleet-mono-buildpack. Running DETECT in: " ${BUILD_DIR}
+
+if [ -f "$( find "${BUILD_DIR}" -maxdepth 2 -iname *.sln )" ]; then
   echo ".NET" && exit 0
 else
   echo "no" && exit 1
