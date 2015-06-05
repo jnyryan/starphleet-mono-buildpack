@@ -2,8 +2,10 @@
 # bin/release <build-dir>
 set -e
 
+LINKED_DIR=`readlink $1`
+
 cat << EOF
 ---
 default_process_types:
-  web: echo "IN RELEASE catchup 5" && bash start.sh
+  web: echo "Release6" && ${LINKED_DIR}/start.sh
 EOF
