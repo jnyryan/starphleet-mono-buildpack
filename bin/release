@@ -7,5 +7,5 @@ LINKED_DIR=`readlink $1`
 cat << EOF
 ---
 default_process_types:
-  web: echo "Release9" && ls -la  ${LINKED_DIR} && ${LINKED_DIR}/start.sh
+  web: echo "Release10" && ls -la  ${LINKED_DIR} && ${LINKED_DIR}/start.sh
 EOF
