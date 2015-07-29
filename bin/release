@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
+
 set -e
 
-LINKED_DIR=`readlink $1`
+BUILD_DIR=$1
+
+# handle symlinks as the build-dir
+if [[ -L "$1" && -d "$1" ]]
+then
+    BUILD_DIR=`readlink $1`
+fi
 
 cat << EOF
 ---
 default_process_types:
-  web: ${LINKED_DIR}/start.sh
+  web: ${BUILD_DIR}/start.sh
 EOF
